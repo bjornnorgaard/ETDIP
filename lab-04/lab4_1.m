@@ -38,3 +38,5 @@ SumOfOnesFromSingleZero = sum(ZeroOriginalImage(:));
 %% Result
 figure, imshow(ZeroOriginalImage); title('BW-billede');
 NumberOfRice = SumOfOnesFromSingleZero / SumOfOnesFromOriginalZero
+
+pause(5); close all;
