@@ -6,17 +6,14 @@ OrignalImage = imread('rice.tif');
 OriginalImageAsDouble = double(OrignalImage) / 255;
 figure, imshow(OriginalImageAsDouble), title('Original') 
 
-%% Choose a single rice
-SingleGrainCrop = imcrop(OrignalImage);
-SingleGrainCropAsDouble = double(SingleGrainCrop)/255;
+%% Choose a single grain
+SingleGrainCrop         = imcrop(OrignalImage);
+SingleGrainCropAsDouble = double(SingleGrainCrop) / 255;
 
 %% Created and show histogram for original/single
+[YSingleGrain , XSingleGrain]  = hist(SingleGrainCropAsDouble(:), 100);
+[YOrignalImage, XOrignalImage] = hist(OriginalImageAsDouble(:  ), 100);
 
-% create hist
-[YSingleGrain, XSingleGrain] = hist(SingleGrainCropAsDouble(:), 100);
-[YOrignalImage, XOrignalImage] = hist(OriginalImageAsDouble(:), 100);
-
-% show
 figure,
 subplot(121); plot(XOrignalImage, YOrignalImage),
 title('Histogram for original');
