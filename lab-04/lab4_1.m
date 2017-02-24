@@ -1,4 +1,4 @@
-%% LAB 4, Exercise 1 %%
+%% LAB 4, Exercise 1
 clc, clear, close all; 
 
 %% Load and show original image
@@ -12,7 +12,7 @@ SingleGrainCropAsDouble = double(SingleGrainCrop) / 255;
 
 %% Created and show histogram for original/single
 [YSingleGrain , XSingleGrain]  = hist(SingleGrainCropAsDouble(:), 100);
-[YOrignalImage, XOrignalImage] = hist(OriginalImageAsDouble(:  ), 100);
+[YOrignalImage, XOrignalImage] = hist(OriginalImageAsDouble(:)  , 100);
 
 figure,
 subplot(121); plot(XOrignalImage, YOrignalImage),
