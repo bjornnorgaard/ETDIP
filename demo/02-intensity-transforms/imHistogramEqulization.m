@@ -3,36 +3,36 @@
 
 clc, clear, close all;
 
-x = round(99*rand(1000,1).^.3)+1;
-[yvals, xvals] = hist(x,100);
+RandomNumbers = round(99*rand(1000,1).^.3)+1;
+[YValues, XValues] = hist(RandomNumbers,100);
 
 figure(1)
-plot(xvals, yvals, 'xb');
+plot(XValues, YValues, 'xb');
 title('Histogram for original data');
 pause;
 
 figure(2)
-s = sum(yvals);
-F = cumsum(yvals)/s;
-plot(xvals, F, '.r');
-axis([xvals(1),xvals(end), 0,1]);
+Sum = sum(YValues);
+CummulativeSum = cumsum(YValues)/Sum;
+plot(XValues, CummulativeSum, '.r');
+axis([XValues(1),XValues(end), 0,1]);
 title('Cumulated Density Function for original data');
 
-for k = 1:length(x)
-    y(k)=F(x(k));
+for k = 1:length(RandomNumbers)
+    y(k) = CummulativeSum(RandomNumbers(k));
 end;
 
-[nyvals, nxvals]=hist(y,100);
+[NewYValues, NewXValues]=hist(y,100);
 pause;
 
 figure(3)
-plot(nxvals, nyvals, 'xb');
+plot(NewXValues, NewYValues, 'xb');
 title('Histogram for transformed data');
 pause;
 
 figure(4)
-ns = sum(nyvals);
-nF = cumsum(nyvals)/ns;
-plot(nxvals, nF, '.r');
-axis([nxvals(1),nxvals(end), 0,1]);
+NewSum = sum(NewYValues);
+NewCummulativeSum = cumsum(NewYValues)/NewSum;
+plot(NewXValues, NewCummulativeSum, '.r');
+axis([NewXValues(1),NewXValues(end), 0,1]);
 title('Cumulative Density Function for transformerd data');
