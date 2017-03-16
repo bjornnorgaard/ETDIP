@@ -36,3 +36,5 @@ NewCummulativeSum = cumsum(NewYValues)/NewSum;
 plot(NewXValues, NewCummulativeSum, '.r');
 axis([NewXValues(1),NewXValues(end), 0,1]);
 title('Cumulative Density Function for transformerd data');
+
+pause; close all;
