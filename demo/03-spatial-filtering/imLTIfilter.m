@@ -3,58 +3,61 @@
 
 clear, close all;
 
-N=256;
-%What is the P(oint) S(pread) F(unction)
-h=[1 2 3;4 5 6;7 8 9];
+n = 256;
+% What is the P(oint) S(pread) F(unction)
 
-d=zeros(N,N);
-d(N/2,N/2)=1;
+filter = [ 1, 2, 3; 4, 5, 6; 7, 8, 9];
 
-f=imfilter(d,h);
+imageArray = zeros(n, n);
+imageArray(n/2, n/2) = 1;
 
-h
-f(N/2-5:N/2+5,N/2-5:N/2+5)
-pause;
+resultingArray = imfilter(imageArray, filter);
+resultingArray(n/2-5:n/2+5, n/2-5:n/2+5)
+
 %-------------------
 
-%Let's study a MA filter
+% Lets study a MA filter
 % MA filter blurs edges
-h1=ones(3,3)./9;
+filter = ones(3, 3)./9;
 
-I=zeros(N,N);
-I(N/2,:)=.5;
-II=imfilter(I,h1);
+imageArray = zeros(n, n);
+imageArray(n/2, :) = .5;
+filteredImageArray = imfilter(imageArray, filter);
 
-I(N/2-5:N/2+5,N/2-5:N/2+5)
-II(N/2-5:N/2+5,N/2-5:N/2+5)
+imageArray(n/2-5:n/2+5, n/2-5:n/2+5)
+filteredImageArray(n/2-5:n/2+5, n/2-5:n/2+5)
 
 figure(1)
-subplot(211), imshow(I);title('Original')
-subplot(212), imshow(II);title('Edges are blured using a MA filter')
+subplot(211), imshow(imageArray); 		  title('Original')
+subplot(212), imshow(filteredImageArray); title('Edges are blured using a MA filter')
 
+imageArray = imread('cameraman.tif');
 
-I=imread('cameraman.tif');
 figure(2)
-subplot(211), imshow(I);title('Original')
-subplot(212), imshow(imfilter(double(I)./255,h1));title('Edges are blured using a MA filter')
+subplot(211), imshow(imageArray);								 title('Original')
+subplot(212), imshow(imfilter(double(imageArray)./255, filter)); title('Edges are blured using a MA filter')
 pause;
+
 %-------------------
 
-%MA filter closes holes
-I=zeros(N,N);
-I(N/2,:)=.5;
-I(N/2, N/2:N/2+1)=0;
+% MA filter closes holes
+imageArray = zeros(n, n);
+imageArray(n/2, :) = .5;
+imageArray(n/2, n/2:n/2+1) = 0;
 
-h1=ones(3,3)/4;
-II=imfilter(I,h1);
+filter = ones(3,3)/4;
+filteredImageArray = imfilter(imageArray,filter);
 
-I(N/2-5:N/2+5,N/2-5:N/2+5)
-II(N/2-5:N/2+5,N/2-5:N/2+5)
+imageArray(n/2-5:n/2+5, n/2-5:n/2+5)
+filteredImageArray(n/2-5:n/2+5, n/2-5:n/2+5)
 
 figure(3)
-subplot(211), imshow(I);title('Orignal, note hole in the line')
-subplot(212), imshow(II);title('Edges are blured using a MA filter')
+subplot(211), imshow(imageArray);		  title('Orignal, note hole in the line')
+subplot(212), imshow(filteredImageArray); title('Edges are blured using a MA filter')
 
-II=II>.01;
+filteredImageArray = filteredImageArray>.01;
 figure(4)
-imshow(II);title('Close holes using a MA filter')
+imshow(filteredImageArray); title('Close holes using a MA filter')
+
+pause; 
+close all;
