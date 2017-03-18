@@ -1,1 +1,18 @@
-\subsection{Åbning}
+\subsection{Åbne}
+
+At ''åbne'' et billede betyder at vi bruger erosion først og dernæst dilation. Med dette vil følgende ske:
+
+\begin{itemize}
+	\item Udjævner konturerne.
+	\item Deler objekter, som kun er forbundet med en tynd forbindelse.
+	\item Fjerner tynde ''protrusions''.
+\end{itemize}
+
+Ligningen for at åbne et billede er vist på Figur~\ref{fig:openingeq}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{figs/spm09/openingeq}
+	\caption{Ligning for at ''åbne'' et billede.}
+	\label{fig:openingeq}
+\end{figure}

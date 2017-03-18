@@ -1,1 +1,19 @@
-\subsection{Lukning}
+\subsection{Lukke}
+
+At ''lukke'' et billede betyder at vi bruger dilation først og dernæst erosion. Med dette vil følgende ske:
+
+\begin{itemize}
+	\item Udjævner igen konturene, men
+	\item Samler objekter, som ellers kun er forbindet med den tynde forbindelse.
+	\item Fjerner ''små'' huller.
+	\item Udfylder ''gaps'' i konturen.
+\end{itemize}
+
+Ligningen for at lukke et billedet er vist på Figur~\ref{fig:closingeq}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figs/spm09/closingeq}
+	\caption{Ligning for at ''lukke'' billedet.}
+	\label{fig:closingeq}
+\end{figure}
