@@ -1,0 +1,122 @@
+1.
+Histogram, huske at komme omkring det grundlæggende.
+
+2. 
+Alle demos.
+Hvordan virker det basale filter. Hvordan brugers laplacefilter, kantfilter.
+
+3. 
+Også noget i kap3
+
+Emne 3 - Kant detektion
+
+Kapitler	10.2.5	9.5.1	3.6
+
+Demo:
+imTestSobel
+ImTestLaplace
+Mophology
+
+Ingen lab.
+
+Emne 4 - fourier transformationer af billeder
+
+Kapitler	4.4	4.5	4.6
+Grundigt	4.2.4	4.5.4	
+
+
+
+
+Demoer:
+imTestFFTFundamentals.m
+imTestFFTSquare.m
+imTestFreqz.m
+
+For at vise filtres fourier kan butterworth, imIdealLP.m
+
+
+Øvelser:
+Lab3
+
+4. 
+Ikke behov for at gå ind i fourierrækker. Vis hvad en diskert fouriertrans, men ellers skal det holdes simpelt.
+Brug demo/lab til at forklare: imTestFFTFundamentals er:” Mega vigtig.” + imTestFFTSquare.
+
+Lav frekvens hører til de “langsomme detaljer”. 
+
+Ikke brug for butterworth.
+
+Diskution af frekvenser, op og ned, høj- og lavfrekvent.
+
+Første opgave i lab3
+
+Gennemgå ikke koden i labs’ne, men tweak måske enkelte argumenter for at vise en pointe.
+
+Vi skal ikke kunne lave alle mulige udledninger af fourier.
+
+Lad formlen udenad.
+
+5. 
+teori: 	4.7, 4.8, 4.9 (dog ikke 4.9.6 om holomorphic filtering).
+demo: 	butterworth (begge), gauss, ideal, imTestFreqz2.m.
+lab: 	6.1, 6.imRemovePeriodicNoise*.m
+
+6. 
+teori:	5.1, 5.2, 5.3.2, 5.4 (minus 5.4.4), (Notes on Wiener filter)
+demo:	6.imNoiseInSquare.m, "wildcard på den her mappe (06. Image Restoration...)"
+lab:	7.2, 6.1
+
+"Det er med vilje at jeg ikke har gjort et så stort nummer ud af matematikken".
+"Det hvor vi fjernede de små prikker i et fingeraftryk med morphologi" (erosion og dillasion).
+
+7. 
+teori:	2.1, 2.2, 6.1, 6.2
+demo:	01. color image/*
+lab:	-
+
+"Det er helt klar den der er det helt centrale" imcolor_rgb_gsi.m 
+
+8. 
+teori:	8.1, 8.2.1, "Notes on hoffmancoding", 8.2.8
+demo:	08. Image Compr/* (minus "Wavelets/")
+lab:	9, 10.
+
+"megastort enme"
+"otte en (8.1) er fin"
+"den eneste der ikke er særlig interessant er folderen" - om "Wavelets/" i demo8 mappen.
+"Den er er essential i forhold til block kodning" - om 08. Imge/imTransformCodingUsingScales.m
+"Fortæl lidt om den indledende del og så om blockkodning" 
+"Huffmancodning og entropi er nok til at tage de 8-10 minutter, så tag måske én ud, men HUSK også at nævne den anden med en linje."
+
+9.
+teori:	9.2.1, 9.2.2, 9.3, 9.6.1, 9.6.2
+demo:	"05. Morph../*" minus *Skeleton.m & *HitOrMiss.m
+lab:	5, begge exercises. (12).
+
+"Den der tror jeg ikke jeg har vist jer" - om imMorphHotOrMiss.m
+"Dem med skeleton skal nedprioriteres + hitOrMiss" - om mindre vigtige demoer.
+"De der er rigtige fine" - om imGetBoundaryUsingMorphs.m og imTestErosionAndDilation.m
+
+10.
+teori:	9.5.2, 9.5.3
+demo:	"05. Morph/imMorphDisks.m"
+lab:	5.1, 5.2, 4.1
+
+"Den der er helt sikkert god" - om lab5.1
+"Snak primært om 5.1"
+"Teorien (om siderne i bogen), er lidt svær at komme omkring"
+"En del af det her er også at lave thresholding, hvordan man bygger et system op. At man efter at lave thresholder går ind og laver optælling"
+"Demos, det ved jeg heller ikke rigtig om vi har det. Det tætteste bliver nok det vi havde om morphologi med imMorphDiske.m"
+
+11.
+teori:	10.2, 10.2.3, 10.2.7 (vigtig)
+demo:	"07. Segmentation/imHoughPolar_ver2.m"
+lab:	8.2
+
+"Der skal i bruge lidt tid på den der" - om 10.2.7
+"Bruge tid på det første, at vise det med demoen"
+
+12.
+teori:	12.1, 12.2.1
+demo:	"09. Object/*" dog ikke "NeuraleNets/"
+lab:	11
