@@ -1,7 +1,7 @@
 %Testing frequence response of different filters
 %HKa Feb. 2015
 
-clear, close all;
+clear; close all;
 
 h=fspecial('average',3);
 figure, freqz2(h);title('Amp. reponse of Average-filter')
@@ -18,3 +18,5 @@ pause;
 h=fspecial('prewitt');
 figure, freqz2(h);title('Amp. reponse of Prewitt-filter')
 pause;
+
+close all;
