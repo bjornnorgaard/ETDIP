@@ -3,17 +3,23 @@
 
 clear, close all;
 
-%h=fspecial('prewitt');%see GW p. 708
-%ls=(imfilter(h,h)+imfilter(h',h'))/8
+%h = fspecial('prewitt'); % See GW p. 708
+%ls = (imfilter(h, h) + imfilter(h', h'))/8
 
-lp=fspecial('laplacian',0)
-I=imread('cameraman.tif');
+filter = fspecial('laplacian', 0)
+image = imread('cameraman.tif');
 
-J=imfilter(I,lp);
-figure, imshow(I);
-figure, imshow(double(I)/255-3*double(J)/255)
+filteredImage = imfilter(image, filter);
 
-K=double(I)/255-.5*double(J)/255;
+figure, imshow(image); title('original');
+pause; 
 
-imshow(histeq(K))
+figure, imshow( (double(image)/255) - (3*double(filteredImage)/255) ); title('original - filtered'); 
+pause;
 
+K = double(image)/255 - 3*double(filteredImage)/255;
+
+imshow(histeq(K)); title('histeq');
+pause; 
+
+close all;
