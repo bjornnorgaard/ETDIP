@@ -1,0 +1,39 @@
+\subsection{Diskret Fouriertransformation}
+
+Fourierrækker beskriver en periodisk funktion med en sum af cos og sin funktioner. Hvis sinusser med forskellig frekvens lægges sammen, får man ikke en sinus ud, men helt andet signal. Alle signaler kan laves ved at addere sinusser.
+
+\subsubsection{Kontinuerte Fourier Transformation}
+
+Evaluerer integralet fra $-\inf$ til $\inf$. Eksponenten er $-j*2*\pi*F*t$.
+
+\begin{equation}
+	X(F)=\int_{-\infty }^{\infty }\!x \left( t \right) {{\rm e}^{-2\,i\pi\,Ft}}\,{\rm d}t
+\end{equation}
+
+\subsubsection{Diskrete Fourier Transformation}
+
+I billedbehandling har vi med diskrete værdier at gøre.\\
+Da fouriertransformeringaf billeder foretages direkte på diskrete værdier, må outputtet af transformationen også være diskret.\\
+
+Den diskrete fouriertransformation behandler et antal samples, $M$, af en funktion $f(t)$.
+
+\begin{equation}
+	X_{k} = \sum_{n = 0}^{N-1}x_{n} \cdot e^{\frac{j \cdot 2 \cdot \pi \cdot k \cdot n}{N}}
+\end{equation}
+
+\vskip .3cm
+
+Her svare $\frac{k}{N}$ til frekvensen $F$, $n$ til tiden $t$, $X_{k}$ er den k'te krekvens bin.
+
+Billeder er todimensionale og derfor kan vi benytte todimensionale fouriertransformationer:
+
+\begin{equation}
+X_{k,v} = \sum_{m = 0}^{M} \: \;  \sum_{n = 0}^{N} \; 
+x_{m,n} \cdot 
+e^{-j \cdot k \cdot m} \cdot 
+e^{-j \cdot v \cdot n}
+\end{equation} 
+
+\vskip .3cm
+
+Hvor $k$ er den vertikale frekvens og $v$ er den horisontale.
