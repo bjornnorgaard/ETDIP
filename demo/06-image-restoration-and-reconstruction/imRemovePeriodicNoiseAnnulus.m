@@ -26,13 +26,17 @@ n=n1+n2+n3+n4;
 fn=f+n;
 
 figure(1), imshow(n/max(n(:))); title('Periodic noise');
+pause;
+
 figure(2), imshow(fn); title('Image and periodic');
+pause;
 
 FN=fftshift(fft2(fn));
 
 mx=max(log10(abs(FN(:))+1));
 LogFN=log10(abs(FN)+1)/mx;
 figure(3), imshow(LogFN);
+pause;
 
 %Bandrejectfilter som i GW pp. 335-336
 D0=100;W=5; %D0: radius of annulus, W: width of annulus
@@ -50,7 +54,11 @@ for r=1:M
     end
 end
 
-
 mx=max(log10(abs(FN(:))+1));
 figure(4), imshow(log10(abs(FN)+1)/mx),colormap(jet(64)),colorbar;
+pause;
+
 figure(5), imshow(real(ifft2(fftshift(FN))));
+pause;
+
+close all;
