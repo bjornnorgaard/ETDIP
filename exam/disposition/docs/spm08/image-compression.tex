@@ -1,0 +1,38 @@
+\subsection{Billedekompression}
+
+Datakompression refererer til den process hvori man reducerer mængden af data der er nødvendig for at vise en mængde information. 
+
+Kompressionsratioen er beskrevet ved Ligning~\ref{comp-ratio}, hvor $b$ er det originale data og $b'$ er den komprimerede.
+
+\begin{equation}\label{comp-ratio}
+C = \frac{b}{b'}
+\end{equation}
+
+Den relative \textit{data redundancy} kan derved beskrives ved Ligning~\ref{eq:data-redundandy}, hvor R beskriver hvor stor en del af den originale mængde data, som var redundant.
+
+\begin{equation}\label{eq:data-redundandy}
+R = 1-\frac{1}{C}
+\end{equation}
+
+\subsubsection{Typer af Data-redundans}
+
+\begin{enumerate}
+	\item \textbf{Coding redundancy}\\
+	Information skrives som bits. Eksempelvis kan noget information beskrives med mindre en 8-bit.
+	
+	\item \textbf{Spatial og temporary redundancy}\\
+	Pixels er ofte ens eller afhængige af sine naboer og kan derfor ofte genskabes af færre bits.
+	
+	\item \textbf{Irrelevant information}\\
+	Eksempelvis visuel information som ignoreres af menneskets øje.
+\end{enumerate}
+
+\subsubsection{Lossless vs. Lossy Kompression}
+
+\begin{itemize}
+	\item \textbf{Lossless}\\
+	Originale billede kan genskabens. 
+	
+	\item \textbf{Lossy}\\
+	Originale billede kan \textit{ikke} genskabes.
+\end{itemize}
