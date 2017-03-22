@@ -1,0 +1,16 @@
+\subsection{Hole Filling}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figs/spm10/hole-filling}
+	\caption{Eksempel på hole-filling.}
+	\label{fig:hole-filling}
+\end{figure}
+
+Figur~\ref{fig:hole-filling} viser et billede af nogle marmorkugler. De sorte pletter inde i cirklerne er reflektioner.\\
+
+For billedet kan det være at vi gerne vil tælle antallet af kugler eller hvor stort et areal af billede som de optager. For at gøre dette skal vi af med det sorte område inde i cirklerne. Dette gør vi med hole-filling.\\
+
+\textbf{Bemærk} at man skal vide om de sorte pixels er baggrund eller ''inner points''. For at automatisere denne process skal vi bruge ekstra ''intelligens''.\\
+
+Der er foretaget thresholding sådan at vi står med et binært billede. Herfra skal vi bruge hole-filling til at komme af med disse huller. Dette gør vi ved at bruge \textit{dilation} på et nyligt oprettet punkt inden i disse områder.
