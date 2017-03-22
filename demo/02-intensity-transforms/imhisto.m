@@ -2,7 +2,6 @@
 %HKa Feb. 2015
 
 Image = imread('cameraman.tif');
-%Image = imread('lenna.tif');
 %Image = imread('fingerprint.tif');
 %Image = imread('kobling.tif');
 
