@@ -11,7 +11,7 @@ I = imread('cameraman.tif');
 dI = double(I)/255;
 
 figure(1), imshow(I);title('Original image')
-pause;
+%pause;
 
 % Lets calculate the Fourier Transform (goto Frequnecy Domain)
 FI = fft2(dI);
@@ -29,7 +29,7 @@ end
 logabsFI = log10(abs(FI));
 
 figure(2), imshow(logabsFI/max(logabsFI(:)));title('Fourier of cutted frequence using Butterworth')
-pause;
+%pause;
 
 % Lets return to the spatial domain
 FI = fftshift(FI);

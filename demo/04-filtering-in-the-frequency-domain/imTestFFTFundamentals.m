@@ -10,14 +10,14 @@ k = 2
 x = sin((2*pi)/N*k*n);
 fft(x) % We see the sinoid correspondes to a pair of par of non-zero values in the frequnecy domian
 
-%   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 
+%   0 1 2 3 3 5 6 7 8 9 0 1 2 3 4 5 
 ix=[0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0]
 x = ifft(ix) % We could also get these using ifft
 stem(x); title('ifft("point pair") = sine')
 
 % Lets try this in 2 dimensions
 M = 256;N = 256;
-l = 3; k = 5;
+l = 2; k = 2;
 for r = 0:M-1
     for s = 0:N-1
         I(r+1,s+1)=.5*sin(2*pi/M*(l*r)+2*pi/N*(k*s))+.5;

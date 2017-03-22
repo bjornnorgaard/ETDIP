@@ -17,11 +17,11 @@ figure, imshow(Ip);title('Original with slat and pber noise');
 
 J0 = medfilt2(Ip,[3,3]);
 figure, imshow(J0);title('Median filtrering 1 time');
-pause;
+%pause;
 
 J1 = medfilt2(J0,[3,3]);
 figure, imshow(J1);title('Median filtrering 2 times');
-pause;
+%pause;
 
 J2 = medfilt2(J1,[3,3]);
 figure, imshow(J2);title('Median filtrering 3 times');%Note more and more bluring
