@@ -37,7 +37,7 @@ bI2 = imdilate(bI1, structuralElement);
 figure, imshow(bI2), title('Erosion followed by dilation of original (opening)')
 
 sum(bI2(:)) / (4*4)
-length(find(R == 4))
+length(find(R == 4)) 
 
 pause;
 close all;
